@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.107.2
+FROM jenkins/jenkins:2.138.2
 WORKDIR /tmp
 
 # Environment variables used throughout this Dockerfile
@@ -196,3 +196,4 @@ USER ${user}
 RUN echo 2.0 > /usr/share/jenkins/ref/jenkins.install.UpgradeWizard.state
 
 CMD /usr/local/jenkins/bin/run.sh
+
