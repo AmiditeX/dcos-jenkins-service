@@ -13,7 +13,7 @@
   <workspaceDir>${JENKINS_HOME}/workspace/${ITEM_FULLNAME}</workspaceDir>
   <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
   <jdks/>
-  <systemMessage>BlueCI - Providing you with some slick ass Jenkins as a Service
+  <systemMessage>BlueCI - Providing you with some slick ass Jenkins as a Service</systemMessage>
   <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
   <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
   <clouds>
