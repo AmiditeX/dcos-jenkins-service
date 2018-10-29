@@ -60,6 +60,8 @@ COPY conf/jenkins/config.xml "${JENKINS_STAGING}/config.xml"
 COPY conf/jenkins/jenkins.model.JenkinsLocationConfiguration.xml "${JENKINS_STAGING}/jenkins.model.JenkinsLocationConfiguration.xml"
 COPY conf/jenkins/nodeMonitors.xml "${JENKINS_STAGING}/nodeMonitors.xml"
 COPY scripts/init.groovy.d/mesos-auth.groovy "${JENKINS_STAGING}/init.groovy.d/mesos-auth.groovy"
+# Files added by BlueCI
+COPY conf/jenkins/org.codefirst.SimpleThemeDecorator.xml "${JENKINS_STAGING}/org.codefirst.SimpleThemeDecorator.xml"
 
 # add plugins
 RUN /usr/local/bin/install-plugins.sh       \
@@ -167,7 +169,9 @@ RUN /usr/local/bin/install-plugins.sh       \
   workflow-multibranch:2.17      \
   workflow-scm-step:2.6          \
   workflow-step-api:2.14         \
-  workflow-support:2.18
+  workflow-support:2.18          \
+# Plugins added by BlueCI
+  simple-theme-plugin:0.5.1
 
 # add mesos plugin
 ADD https://infinity-artifacts.s3.amazonaws.com/mesos-jenkins/mesos.hpi-${MESOS_PLUG_HASH} "${JENKINS_STAGING}/plugins/mesos.hpi"
