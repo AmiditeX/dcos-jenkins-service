@@ -1,8 +1,8 @@
 #!/bin/bash
 
 set -e
+DOCKER_REPO=$1
 
-DOCKER_REPO=amiditex
 # If DOCKER_IMAGE envvar set then use that
 # Else build DOCKER_IMAGE
 

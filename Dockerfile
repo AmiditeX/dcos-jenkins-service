@@ -12,7 +12,7 @@ ENV JENKINS_FOLDER /usr/share/jenkins
 # Build Args
 ARG LIBMESOS_DOWNLOAD_URL=https://downloads.mesosphere.io/libmesos-bundle/libmesos-bundle-1.11.0.tar.gz
 ARG LIBMESOS_DOWNLOAD_SHA256=bd4a785393f0477da7f012bf9624aa7dd65aa243c94d38ffe94adaa10de30274
-ARG BLUEOCEAN_VERSION=1.5.0
+ARG BLUEOCEAN_VERSION=1.9.0
 ARG JENKINS_STAGING=/usr/share/jenkins/ref/
 ARG MESOS_PLUG_HASH=347c1ac133dc0cb6282a0dde820acd5b4eb21133
 ARG PROMETHEUS_PLUG_HASH=a347bf2c63efe59134c15b8ef83a4a1f627e3b5d
@@ -86,90 +86,90 @@ RUN /usr/local/bin/install-plugins.sh       \
   ant:1.8                        \
   ansicolor:0.5.2                \
   antisamy-markup-formatter:1.5  \
-  artifactory:2.15.1             \
+  artifactory:2.16.2             \
   authentication-tokens:1.3      \
   azure-credentials:1.6.0        \
-  azure-vm-agents:0.7.0          \
-  branch-api:2.0.19              \
+  azure-vm-agents:0.7.4          \
+  branch-api:2.0.20              \
   build-name-setter:1.6.9        \
   build-timeout:1.19             \
-  cloudbees-folder:6.4           \
+  cloudbees-folder:6.6           \
   conditional-buildstep:1.3.6    \
-  config-file-provider:2.18      \
-  copyartifact:1.39.1            \
+  config-file-provider:3.3       \
+  copyartifact:1.41              \
   cvs:2.14                       \
   docker-build-publish:1.3.2     \
-  docker-workflow:1.15.1         \
-  durable-task:1.22              \
-  ec2:1.39                       \
+  docker-workflow:1.17           \
+  durable-task:1.26              \
+  ec2:1.41                       \
   embeddable-build-status:1.9    \
   external-monitor-job:1.7       \
-  ghprb:1.40.0                   \
-  git:3.8.0                      \
-  git-client:2.7.1               \
+  ghprb:1.42.0                   \
+  git:3.9.1                      \
+  git-client:2.7.3               \
   git-server:1.7                 \
-  github:1.29.0                  \
-  github-api:1.90                \
-  github-branch-source:2.3.3     \
+  github:1.29.3                  \
+  github-api:1.92                \
+  github-branch-source:2.4.1     \
   github-organization-folder:1.6 \
-  gitlab-plugin:1.5.5            \
-  gradle:1.28                    \
+  gitlab-plugin:1.5.10           \
+  gradle:1.29                    \
   greenballs:1.15                \
   handlebars:1.1.1               \
   ivy:1.28                       \
   jackson2-api:2.8.11.3          \
-  job-dsl:1.68                   \
-  jobConfigHistory:2.18          \
+  job-dsl:1.70                   \
+  jobConfigHistory:2.18.3        \
   jquery:1.12.4-0                \
   ldap:1.20                      \
   mapdb-api:1.0.9.0              \
   marathon:1.6.0                 \
-  matrix-auth:2.2                \
+  matrix-auth:2.3                \
   matrix-project:1.13            \
   maven-plugin:3.1.2             \
-  metrics:3.1.2.11               \
-  monitoring:1.72.0              \
+  metrics:4.0.2.2                \
+  monitoring:1.74.0              \
   nant:1.4.3                     \
   node-iterator-api:1.5.0        \
-  pam-auth:1.3                   \
+  pam-auth:1.4                   \
   parameterized-trigger:2.35.2   \
   pipeline-build-step:2.7        \
   pipeline-github-lib:1.0        \
   pipeline-input-step:2.8        \
   pipeline-milestone-step:1.3.1  \
-  pipeline-model-api:1.2.8       \
-  pipeline-model-definition:1.2.8 \
-  pipeline-model-extensions:1.2.8 \
+  pipeline-model-api:1.3.2       \
+  pipeline-model-definition:1.3.2 \
+  pipeline-model-extensions:1.3.2 \
   pipeline-rest-api:2.10         \
   pipeline-stage-step:2.3        \
   pipeline-stage-view:2.10       \
   plain-credentials:1.4          \
-  prometheus:1.2.0               \
-  rebuild:1.28                   \
-  role-strategy:2.7.0            \
-  run-condition:1.0              \
-  s3:0.11.0                      \
+  prometheus:2.0.0               \
+  rebuild:1.29                   \
+  role-strategy:2.9.0            \
+  run-condition:1.2              \
+  s3:0.11.2                      \
   saferestart:0.3                \
-  saml:1.0.5                     \
-  scm-api:2.2.6                  \
-  ssh-agent:1.15                 \
-  ssh-slaves:1.26                \
-  subversion:2.10.5              \
-  timestamper:1.8.9              \
+  saml:1.1.0                     \
+  scm-api:2.3.0                  \
+  ssh-agent:1.17                 \
+  ssh-slaves:1.28.1              \
+  subversion:2.11.1              \
+  timestamper:1.8.10             \
   translation:1.16               \
   variant:1.1                    \
   windows-slaves:1.3.1           \
-  workflow-aggregator:2.5        \
-  workflow-api:2.27              \
-  workflow-basic-steps:2.6       \
-  workflow-cps:2.48              \
-  workflow-cps-global-lib:2.9    \
-  workflow-durable-task-step:2.19 \
-  workflow-job:2.18              \
-  workflow-multibranch:2.17      \
-  workflow-scm-step:2.6          \
-  workflow-step-api:2.14         \
-  workflow-support:2.18          \
+  workflow-aggregator:2.6        \
+  workflow-api:2.31              \
+  workflow-basic-steps:2.12      \
+  workflow-cps:2.60              \
+  workflow-cps-global-lib:2.12   \
+  workflow-durable-task-step:25  \
+  workflow-job:2.25              \
+  workflow-multibranch:2.20      \
+  workflow-scm-step:2.7          \
+  workflow-step-api:2.16         \
+  workflow-support:2.21          \
 # Plugins added by BlueCI
   simple-theme-plugin:0.5.1
 
