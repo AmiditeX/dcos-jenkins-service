@@ -83,12 +83,12 @@ RUN /usr/local/bin/install-plugins.sh       \
   blueocean-rest:${BLUEOCEAN_VERSION}       \
   blueocean-web:${BLUEOCEAN_VERSION}        \
   blueocean:${BLUEOCEAN_VERSION}            \
-  ant:1.8                        \
+  ant:1.9                        \
   ansicolor:0.5.2                \
   antisamy-markup-formatter:1.5  \
   artifactory:2.16.2             \
   authentication-tokens:1.3      \
-  azure-credentials:1.6.0        \
+  azure-credentials:1.6.0       \
   azure-vm-agents:0.7.4          \
   branch-api:2.0.20              \
   build-name-setter:1.6.9        \
@@ -154,7 +154,7 @@ RUN /usr/local/bin/install-plugins.sh       \
   scm-api:2.3.0                  \
   ssh-agent:1.17                 \
   ssh-slaves:1.28.1              \
-  subversion:2.11.1              \
+  subversion:2.12.1              \
   timestamper:1.8.10             \
   translation:1.16               \
   variant:1.1                    \
@@ -164,17 +164,19 @@ RUN /usr/local/bin/install-plugins.sh       \
   workflow-basic-steps:2.12      \
   workflow-cps:2.60              \
   workflow-cps-global-lib:2.12   \
-  workflow-durable-task-step:25  \
+  workflow-durable-task-step:2.25 \
   workflow-job:2.25              \
   workflow-multibranch:2.20      \
   workflow-scm-step:2.7          \
   workflow-step-api:2.16         \
   workflow-support:2.21          \
 # Plugins added by BlueCI
-  simple-theme-plugin:0.5.1
+  simple-theme-plugin:0.5.1      \
+  credentials-binding:1.17       \
+  mesos:0.18.1
 
 # add mesos plugin
-ADD https://infinity-artifacts.s3.amazonaws.com/mesos-jenkins/mesos.hpi-${MESOS_PLUG_HASH} "${JENKINS_STAGING}/plugins/mesos.hpi"
+#ADD https://infinity-artifacts.s3.amazonaws.com/mesos-jenkins/mesos.hpi-${MESOS_PLUG_HASH} "${JENKINS_STAGING}/plugins/mesos.hpi"
 ADD https://infinity-artifacts.s3.amazonaws.com/prometheus-jenkins/prometheus.hpi-${PROMETHEUS_PLUG_HASH} "${JENKINS_STAGING}/plugins/prometheus.hpi"
 ADD https://infinity-artifacts.s3.amazonaws.com/statsd-jenkins/metrics-graphite.hpi-${STATSD_PLUG_HASH} "${JENKINS_STAGING}/plugins/metrics-graphite.hpi"
 
@@ -200,4 +202,3 @@ USER ${user}
 RUN echo 2.0 > /usr/share/jenkins/ref/jenkins.install.UpgradeWizard.state
 
 CMD /usr/local/jenkins/bin/run.sh
-
