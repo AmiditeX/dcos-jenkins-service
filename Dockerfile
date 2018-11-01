@@ -66,7 +66,7 @@ COPY scripts/init.groovy.d/mesos-auth.groovy "${JENKINS_STAGING}/init.groovy.d/m
 # Install the settings for the custom CSS plugin
 COPY conf/jenkins/org.codefirst.SimpleThemeDecorator.xml "${JENKINS_STAGING}/org.codefirst.SimpleThemeDecorator.xml"
 # Add the Jenkins Master init script
-COPY conf/jenkins/init.groovy.d/init.groovy "${JENKINS_STAGING}/init.groovy"
+#COPY conf/jenkins/init.groovy.d/init.groovy${JENKINS_STAGING}/init.groovy
 
 # Configuration files added by BlueCI >>> END
 

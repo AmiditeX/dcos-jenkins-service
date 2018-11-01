@@ -25,6 +25,7 @@ def populate_jenkins_config_xml(config_xml, master, name, port, role, user, mara
     replaces certain configuration options of the Mesos plugin, such as the
     framework name and the Jenkins URL that agents use to connect back to the
     master.
+
     :param config_xml: the path to Jenkins' 'config.xml' file
     :param name: the name of the framework, e.g. 'jenkins'
     :param port: the Mesos port the task is running on
@@ -48,6 +49,7 @@ def populate_jenkins_config_xml(config_xml, master, name, port, role, user, mara
 def populate_jenkins_location_config(location_xml, url):
     """Modifies a Jenkins master's location config at runtime. This
     replaces the value of 'jenkinsUrl' with url.
+
     :param location_xml: the path to Jenkins'
         'jenkins.model.JenkinsLocationConfiguration.xml' file
     :type location_xml: str
@@ -63,6 +65,7 @@ def populate_nginx_config(config_file, nginx_port, jenkins_port, context):
     """Modifies an nginx config, replacing the "magic" strings
     '_XNGINX_PORT', '_XJENKINS_PORT' and '_XJENKINS_CONTEXT' with the real
     value provided.
+
     :param config_file: the path to an 'nginx.conf'
     :param nginx_port: the Mesos port the task is running on
     :param jenkins_port: the Mesos port the task is running on
@@ -87,6 +90,7 @@ def populate_nginx_config(config_file, nginx_port, jenkins_port, context):
 def populate_known_hosts(hosts, dest_file):
     """Gather SSH public key from one or more hosts and write out the
     known_hosts file.
+
     :param hosts: a string of hosts separated by whitespace
     :param dest_file: absolute path to the SSH known hosts file
     """
@@ -153,6 +157,7 @@ def main():
 
 def _get_xml_root(config_xml):
     """Return the ET tree and root XML element.
+
     :param config_xml: path to config XML file
     :type config_xml: str
     :return: a tuple (tree,root)
@@ -166,6 +171,7 @@ def _get_xml_root(config_xml):
 def _find_and_set(element, term, new_text, write_if_empty=False):
     """Find the desired term within the XML element and replace
     its text with text.
+
     :param element: XML element
     :type element: xml.etree.ElementTree.Element
     :param term: XML element to find
