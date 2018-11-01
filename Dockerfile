@@ -60,8 +60,15 @@ COPY conf/jenkins/config.xml "${JENKINS_STAGING}/config.xml"
 COPY conf/jenkins/jenkins.model.JenkinsLocationConfiguration.xml "${JENKINS_STAGING}/jenkins.model.JenkinsLocationConfiguration.xml"
 COPY conf/jenkins/nodeMonitors.xml "${JENKINS_STAGING}/nodeMonitors.xml"
 COPY scripts/init.groovy.d/mesos-auth.groovy "${JENKINS_STAGING}/init.groovy.d/mesos-auth.groovy"
-# Files added by BlueCI
+
+# Configuration files added by BlueCI >>> START
+
+# Install the settings for the custom CSS plugin
 COPY conf/jenkins/org.codefirst.SimpleThemeDecorator.xml "${JENKINS_STAGING}/org.codefirst.SimpleThemeDecorator.xml"
+# Add the Jenkins Master init script
+COPY conf/jenkins/init.groovy.d/init.groovy "${JENKINS_STAGING}/init.groovy"
+
+# Configuration files added by BlueCI >>> END
 
 # add plugins
 RUN /usr/local/bin/install-plugins.sh       \
@@ -88,7 +95,7 @@ RUN /usr/local/bin/install-plugins.sh       \
   antisamy-markup-formatter:1.5  \
   artifactory:2.16.2             \
   authentication-tokens:1.3      \
-  azure-credentials:1.6.0       \
+  azure-credentials:1.6.0        \
   azure-vm-agents:0.7.4          \
   branch-api:2.0.20              \
   build-name-setter:1.6.9        \
@@ -173,7 +180,8 @@ RUN /usr/local/bin/install-plugins.sh       \
 # Plugins added by BlueCI
   simple-theme-plugin:0.5.1      \
   credentials-binding:1.17       \
-  mesos:0.18.1
+  mesos:0.18.1                   \
+  cloudbees-bitbucket-branch-source:2.2.13
 
 # add mesos plugin
 #ADD https://infinity-artifacts.s3.amazonaws.com/mesos-jenkins/mesos.hpi-${MESOS_PLUG_HASH} "${JENKINS_STAGING}/plugins/mesos.hpi"
