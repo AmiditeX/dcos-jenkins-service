@@ -181,4 +181,4 @@ def _find_and_set(element, term, new_text, write_if_empty=False):
 
 
 if __name__ == '__main__':
-sys.exit(main())
+    sys.exit(main())
