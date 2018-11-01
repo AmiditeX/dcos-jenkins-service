@@ -66,7 +66,7 @@ COPY scripts/init.groovy.d/mesos-auth.groovy "${JENKINS_STAGING}/init.groovy.d/m
 # Install the settings for the custom CSS plugin
 COPY conf/jenkins/org.codefirst.SimpleThemeDecorator.xml "${JENKINS_STAGING}/org.codefirst.SimpleThemeDecorator.xml"
 # Add the Jenkins Master init script
-#COPY conf/jenkins/init.groovy.d/init.groovy${JENKINS_STAGING}/init.groovy
+COPY conf/jenkins/init.groovy.d/init.groovy "${JENKINS_STAGING}/init.groovy"
 
 # Configuration files added by BlueCI >>> END
 
@@ -184,7 +184,7 @@ RUN /usr/local/bin/install-plugins.sh       \
   cloudbees-bitbucket-branch-source:2.2.13
 
 # add mesos plugin
-#ADD https://infinity-artifacts.s3.amazonaws.com/mesos-jenkins/mesos.hpi-${MESOS_PLUG_HASH} "${JENKINS_STAGING}/plugins/mesos.hpi"
+ADD https://infinity-artifacts.s3.amazonaws.com/mesos-jenkins/mesos.hpi-${MESOS_PLUG_HASH} "${JENKINS_STAGING}/plugins/mesos.hpi"
 ADD https://infinity-artifacts.s3.amazonaws.com/prometheus-jenkins/prometheus.hpi-${PROMETHEUS_PLUG_HASH} "${JENKINS_STAGING}/plugins/prometheus.hpi"
 ADD https://infinity-artifacts.s3.amazonaws.com/statsd-jenkins/metrics-graphite.hpi-${STATSD_PLUG_HASH} "${JENKINS_STAGING}/plugins/metrics-graphite.hpi"
 
