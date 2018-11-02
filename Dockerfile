@@ -181,8 +181,7 @@ RUN /usr/local/bin/install-plugins.sh       \
   simple-theme-plugin:0.5.1      \
   credentials-binding:1.17       \
   mesos:0.18.1                   \
-  cloudbees-bitbucket-branch-source:2.2.14 \
-  matrix-auth:2.3
+  cloudbees-bitbucket-branch-source:2.2.14 
 
 # add mesos plugin
 ADD https://infinity-artifacts.s3.amazonaws.com/mesos-jenkins/mesos.hpi-${MESOS_PLUG_HASH} "${JENKINS_STAGING}/plugins/mesos.hpi"
