@@ -12,8 +12,14 @@ def env = System.getenv()
 def jenkins = Jenkins.getInstance()
 
 //Add a default user to the Jenkins Master
-def rootUser = jenkins.getSecurityRealm().createAccount(env['DEFAULT_JENKINS_USER'], env['DEFAULT_JENKINS_PASSWORD'])
+def rootUser = jenkins.getSecurityRealm().createAccount(env['DEFAULT_ADMIN'], env['DEFAULT_PASSWORD'])
 rootUser.save()
+
+//Add security realm
+jenkins.setSecurityRealm(new HudsonPrivateSecurityRealm(false))
+
+//Add authorization strategy
+jenkins.setAuthorizationStrategy(new ProjectMatrixAuthorizationStrategy())
 
 //Set user as admin
 jenkins.getAuthorizationStrategy().add(Jenkins.ADMINISTER, env.JENKINS_USER)
